@@ -1,14 +1,27 @@
 title: CompSci Blogs
-description: "August 2023 to June 2024"
-owner_name: Nighthawk Coders
-github_username: nighthawkcoders
-baseurl: "/student"
-remote_theme: pages-themes/midnight@v0.2.0
+description: "Soham's AP Computer Science"
+owner_name: Soham Kamat
+github_username: Soham360
+baseurl: "/APCSA"
+
+# remote_theme: pages-themes/midnight@v0.2.0
 # remote_theme: pages-themes/dinky@v0.2.0
 # remote_theme: pages-themes/minimal@v0.2.0
 # remote_theme: pages-themes/hacker@v0.2.0
-# remote_theme: pages-themes/cayman@v0.2.0
+
+# remote_theme: pages-themes/tactile@v0.2.0
+# remote_theme: pages-themes/merlot@v0.2.0
+# remote_theme: pages-themes/dinky@v0.2.0
 # remote_theme: pages-themes/time-machine@v0.2.0
+# remote_theme: pages-themes/modernist@v0.2.0
+# remote_theme: pages-themes/architect@v0.2.0
+# remote_theme: pages-themes/primer@v0.2.0
+# remote_theme: pages-themes/slate@v0.2.0
+# remote_theme: pages-themes/midnight@v0.2.0
+# remote_theme: pages-themes/hacker@v0.2.0
+remote_theme: pages-themes/cayman@v0.2.0
+# remote_theme: pages-themes/leap-day@v0.2.0
+# remote_theme: pages-themes/minimal@v0.2.0
 plugins:
 - jekyll-remote-theme
 future: true
