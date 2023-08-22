@@ -1,14 +1,8 @@
 title: CompSci Blogs
-description: "AP Computer Science Portfolio"
+description: "Soham's AP Computer Science Portfolio"
 owner_name: Soham Kamat
 github_username: Soham360
 baseurl: "/APCSA"
-
-# remote_theme: pages-themes/midnight@v0.2.0
-# remote_theme: pages-themes/dinky@v0.2.0
-# remote_theme: pages-themes/minimal@v0.2.0
-# remote_theme: pages-themes/hacker@v0.2.0
-
 # remote_theme: pages-themes/tactile@v0.2.0
 # remote_theme: pages-themes/merlot@v0.2.0
 # remote_theme: pages-themes/dinky@v0.2.0

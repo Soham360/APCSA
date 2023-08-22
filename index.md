@@ -1,6 +1,6 @@
 ---
 layout: default
-title: Soham's APCSA Blog
+title: Home
 ---
 
 Go to my [Github account](https://github.com/Soham360) !!
