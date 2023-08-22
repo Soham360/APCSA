@@ -1,8 +1,7 @@
 ---
 layout: default
-title: Student Blog
+title: Soham's APCSA Blog
 ---
-<link rel="stylesheet" href="index.css">
 
 Go to my [Github account](https://github.com/Soham360) !!
 
