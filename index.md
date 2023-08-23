@@ -3,7 +3,15 @@ layout: default
 title: Home
 ---
 
-Go to my [Github account](https://github.com/Soham360) !!
+<p align="center">
+  <img src="{{ site.baseurl }}/images/Soham_Kamat_-_Am_Lit_1_Introduction_of_Me.png" />
+</p>
+
+| Week | Topics | Summary |
+|-|-|-|
+| 0 | General Setup | TBA |
+
+Go to my [Github account](https://github.com/Soham360)
 
 ## Overview of Hacks, Study and Tangibles
 Blogging in GitHub pages is a way to learn and code at the same time. 
