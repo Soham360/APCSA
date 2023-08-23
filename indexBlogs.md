@@ -4,5 +4,3 @@ permalink: /blogs
 title: Blogs
 ---
 
-
-hello

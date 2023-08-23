@@ -7,9 +7,9 @@ title: Home
   <img src="{{ site.baseurl }}/images/Soham_Kamat_-_Am_Lit_1_Introduction_of_Me.png" />
 </p>
 
-| Week | Topics | Summary |
-|-|-|-|
-| 0 | General Setup | TBA |
+| Week | Topics | Review Ticket | Summary |
+|-|-|-|-|
+| 0 | General Setup | [Link](https://github.com/Soham360/APCSA/issues/1) | TBA |
 
 Go to my [Github account](https://github.com/Soham360)
 
