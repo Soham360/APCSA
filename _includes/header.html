@@ -1,20 +1,47 @@
 <header class="site-header">
-  <body></body>
-  <link rel="stylesheet" href="index.css">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Silkscreen&display=swap" rel="stylesheet">
-  <section class="header">
-  <nav>
-    <div class="nav-links">
-        <ul>
-          <li class="fork"><a style="font-size: 40px" href="https://Soham360.github.io/APCSA/">Home</a></li>
-          <li class="fork"><a style="font-size: 40px" href="https://Soham360.github.io/APCSA/csp">Plans</a></li>
-          <li class="fork"><a style="font-size: 40px" href="https://Soham360.github.io/APCSA/csa">Schedule</a></li>
-          <li class="fork"><a style="font-size: 40px" href="https://Soham360.github.io/APCSA/blogs">Blogs</a></li>
-          <li class="title"><a style="font-size: 40px" href="https://Soham360.github.io/APCSA/#readme">GitHub</a></li>
-        </ul>
-      </nav>
-    </div><!-- end header -->
-  </body>
-  </header>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Chakra+Petch');
+    ul {
+      list-style-type: none;
+      font-family: 'Mona Sans';
+      margin: auto;
+      padding: 0;
+      overflow: hidden;
+      background-color: rgb(129, 188, 206);
+      font-size:15px;
+    }
+    li.fork {
+      float: left;
+    }
+    li:last-child {
+      border-right: none;
+    }
+    li a {
+      display: block;
+      color: #000000;
+      text-align: left;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+    li a:hover:not(.active) {
+      background-color: #F1E9DB;
+    }
+    .center {
+      margin: auto;
+      width: 80%;
+      border: 5px;
+      border-color: black;
+    }
+    </style>
+  <div id="header" class="center">
+    <nav>
+      <ul>
+        <li class="fork"><a href="{{site.baseurl}}/">Home</a></li>
+        <li class="fork"><a href="{{site.baseurl}}/blogs">Lab Notebook</a></li>
+        <li class="fork"><a href="{{site.baseurl}}/">Blogs</a></li>
+        <li class="fork"><a href="{{site.baseurl}}/">Calculators</a></li>
+        <li class="fork"><a href="{{site.baseurl}}/search">About</a></li>
+      </ul>
+    </nav>
+  </div><!-- end header -->
+</header>
