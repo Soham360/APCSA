@@ -5,10 +5,5 @@ title: Home
 
 | Week | Topics | Review Ticket | Summary |
 |-|-|-|-|
-| 0 | General Setup | [Link](https://github.com/Soham360/APCSA/issues/1) | TBA |
+| 0 | General Setup | [Link](https://github.com/Soham360/APCSA/issues/1) | This week we set up/updated the tools needed for this trimester. We also created a new github page instead of a fastpage because fastpages is now deprecated. I also added a theme to my github page. I wanted to make a custom theme but that requires a lot of css and causes a lot of formatting issues. I also added a typing game that gives you 5 words to type and you have to type them as fast as you can. |
 
-## Overview of Hacks, Study and Tangibles
-- Blogging in GitHub pages is a way to learn and code at the same time. 
-- Plans, Lists, [Scrum Boards](https://clickup.com/blog/scrum-board/) help you to track key events, show progress and record time.  Effort is a big part of your class grade.  Show plans and time spent!
-- [Hacks(Todo)](https://levelup.gitconnected.com/six-ultimate-daily-hacks-for-every-programmer-60f5f10feae) enable you to stay in focus with key requirements of the class.  Each Hack will produce Tangibles.
-- Tangibles or [Tangible Artifacts](https://en.wikipedia.org/wiki/Artifact_(software_development)) are things you accumulate as a learner and coder. 
