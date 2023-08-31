@@ -4,7 +4,7 @@ comments: true
 layout: post
 title: Typing Game
 permalink: /typinggame/
-courses: { csse: {week: 0}, csp: {week: 0}, csa: {week: 0} }
+courses: {csa: {week: 1} }
 type: hacks
 ---
 
