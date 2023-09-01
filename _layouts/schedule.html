@@ -43,8 +43,9 @@ Load all posts with site
   <tr>
     <th>Week</th>
     <th>Plans</th>
-    <th>Hacks(Todo)</th>
+    <th>Hacks</th>
     <th>Tangibles</th>
+    <th>Summary + Review Ticket</th>
   </tr>
 
   {%comment%} 
@@ -63,6 +64,7 @@ Load all posts with site
     {% assign plans = null | compact %}
     {% assign hacks = null | compact %}
     {% assign tangibles = null | compact %}
+    {% assign summary = null | compact %}
 
 
   {%comment%} 
@@ -95,6 +97,9 @@ Load all posts with site
           {% elsif post.type == "tangibles" %}
               {% assign tangibles = tangibles | unshift: title %}
               {% assign tangibles = tangibles | unshift: url %} 
+          {% elsif post.type == "summary" %}
+              {% assign summary = summary | unshift: title %}
+              {% assign summary = summary | unshift: url %} 
           {% else %}
               {% assign uk = uk | unshift: title %}
               {% assign uk = uk | unshift: url %}     
@@ -107,7 +112,7 @@ Load all posts with site
   {%comment%} 
   <!-- ordering units and inserting column delimiters -->
   {%endcomment%}
-  {% assign units = units | concat:plans | concat:deli | concat:hacks | concat:deli | concat:tangibles  %}
+  {% assign units = units | concat:plans | concat:deli | concat:hacks | concat:deli | concat:tangibles | concat:deli | concat:summary |  %}
 
   {%comment%} 
   <!-- This Loop is maximum iterationss, since elements are pairs it will decrement a extra times at the end -->
@@ -133,3 +138,34 @@ Load all posts with site
 
 </table>
 {% endfor %}
+
+<style>
+      h1 {
+          font-size: 50px;
+          text-align: center;
+          margin-top: 50px;
+          color: #000000;
+      }
+      table {
+          width: 1000px;
+          border-collapse: separate;
+          margin: 0 auto;  
+          background-color: rgb(217, 238, 255);
+      }
+      th, td {
+          border: 1.5px dashed #000000;
+          padding: 10px 10px;
+          text-align: center;
+          width: 333px;
+      }
+      th {
+          background-color: #333;
+          color: #ffffff;
+      }
+      td {
+          color: #000000;
+      }
+      a {
+          color:black;
+      }
+</style>
