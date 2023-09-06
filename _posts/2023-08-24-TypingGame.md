@@ -2,9 +2,9 @@
 toc: true
 comments: true
 layout: post
-title: Typing Game
-permalink: /typinggame/
-courses: {csa: {week: 1} }
+title: Nitro Type
+permalink: /nitrotype/
+courses: {csa: {week: 3} }
 type: hacks
 ---
 
