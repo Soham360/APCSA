@@ -19,7 +19,7 @@ type: hacks
       width: 400px;
       margin: 0 auto;
     }
-    #word-display {
+    #paragraph-display {
       font-size: 24px;
       margin-bottom: 20px;
     }
@@ -34,196 +34,140 @@ type: hacks
       margin-top: 20px;
     }
     .result {
-    border-radius: 12px;
-    border: 1px solid black;
-    padding: 20px;
-    max-width: 300px;
-    flex-shrink: 0;
+      border-radius: 12px;
+      border: 1px solid black;
+      padding: 20px;
+      max-width: 300px;
+      flex-shrink: 0;
     }
   </style>
-  <!-- Importing table and sorting code -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>var define = null;</script>
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-  <!-- div for the game. Includes the words being displayed, the inputs, and the timer -->
+  <!-- div for the game. Includes the paragraph being displayed, the inputs, and the timer -->
   <div id="game-container">
-    <p id="word-display">Start typing...</p>
+    <p id="paragraph-display">Start typing...</p>
     <input type="text" id="input-field" autofocus>
     <p id="timer"></p>
   </div>
-  <!-- This is the leaderboard table. The table headers are given here and the contents are in "flaskBody" and is updated by the script at the bottom. -->
-  <!-- <div id="result">
-    <table id="flaskTable" class="table" style="width:100%">
-        <thead id="flaskHead">
-            <tr>
-                <th>ID</th>
-                <th>Name</th>
-                <th>Time</th>
-            </tr>
-        </thead>
-        <tbody id="flaskBody"></tbody>
-    </table>
-  </div> -->
-
- 
 
   <script>
-    // This is the word bank
-    var words = ["determine", "retiree", "thought", "improve", "truth", "active", "polish", "curve", "stun", "addicted", "extreme", "affect", "present", "certain", "dramatic", "greeting", "order", "twin", "fade", "relevance", "glimpse", "grain", "debt", "tell", "morning", "genetic", "suggest", "reduce", "demonstrate", "lift", "make", "entry", "circulation", "supply", "accountant", "admire", "spot", "assignment", "bracket", "satellite", "agony", "equal", "afford", "wash", "throw", "mistreat", "measure", "competition", "education", "tolerate"];
-    // This is the counter for how many words have been completed
-    var wordsComplete = 0;
-    // This generates a random integer from 1 to 50
-    var currentWordIndex = Math.floor((Math.random() * 50) + 1);
-    // This uses the random integer from above as an index for a random word from the word bank
-    var currentWord = words[currentWordIndex];
-    // This sets the startTime and the timerInterval to un undefined value
+    // This is the paragraph bank
+    var paragraphs = [
+      "Determine retiree thought improve truth active",
+      "Polish curve stun addicted extreme affect present",
+      "Certain dramatic greeting order twin fade",
+      "Relevance glimpse grain debt tell morning",
+      "Genetic suggest reduce demonstrate lift make",
+      "Entry circulation supply accountant admire spot",
+      "Assignment bracket satellite agony equal afford",
+      "Wash throw mistreat measure competition education",
+      "Tolerate"
+    ];
+
+    // This is the counter for how many paragraphs have been completed
+    var paragraphsComplete = 0;
+
+    // This generates a random integer from 0 to the number of paragraphs - 1
+    var currentParagraphIndex = Math.floor(Math.random() * paragraphs.length);
+
+    // This uses the random integer from above as an index for a random paragraph from the paragraph bank
+    var currentParagraph = paragraphs[currentParagraphIndex];
+
+    // Split the current paragraph into an array of words
+    var currentWords = currentParagraph.split(" ");
+
+    // Track the current word index within the paragraph
+    var currentWordIndex = 0;
+
+    // Track the current letter index within the current word
+    var currentLetterIndex = 0;
+
+    // This sets the startTime and the timerInterval to undefined values
     var startTime = null;
     var timerInterval = null;
 
-    // This is the table being defined as a constant variable
-    const tableContainer = document.getElementById("result");
-
-    // This sets the username and the actualTime to un undefined value
-    var username = null;
-    var actualTime = null;
-
-    // This is the code that replaces the previous word
-    var wordDisplay = document.getElementById("word-display");
+    // This is the code that replaces the previous paragraph
+    var paragraphDisplay = document.getElementById("paragraph-display");
     // This gets the input from the text box
     var inputField = document.getElementById("input-field");
     // This is the code that allows the timer to update
     var timer = document.getElementById("timer");
 
-    // This is the database where the scores are stored. The read and create urls are also defined here
-    // const url = "https://petitepandas.duckdns.org/api/times"
-    // const create_fetch = url + '/create';
-    // const read_fetch = url + '/';
+    // This displays the random paragraph
+    paragraphDisplay.textContent = currentParagraph;
 
-    // This displays the random word
-    wordDisplay.textContent = currentWord;
-
-    // function starts as soon as it detects an input
+    // Function starts as soon as it detects an input
     inputField.addEventListener("input", function(event) {
       var enteredText = event.target.value;
 
-      // starts the timer after the user inputs something into the textbox
+      // Starts the timer after the user inputs something into the textbox
       if (!startTime) {
         startTime = new Date();
         startTimer();
       }
 
-      // verifies is the entered word is the same as the actual word they are trying to type
-      if (enteredText === currentWord) {
-        currentWordIndex = Math.floor((Math.random() * 50) + 1);
-        wordsComplete++;
-        // makes sure the user has typed at least 5 random words
-        if (wordsComplete >= 5) {
-          // displays a "You Win!"
-          wordDisplay.textContent = "You Win!";
-          // hides the text box
-          inputField.style.display = "none";
-          // stops the timer
-          stopTimer();
-        } else {
-          // if the user has not typed 5 words, gets another random word
-          currentWord = words[currentWordIndex];
-          // displays the random word
-          wordDisplay.textContent = currentWord;
-          // clears the text box after the current word has been entered
+      // Verify if the entered letter is correct
+      if (enteredText === currentWords[currentWordIndex][currentLetterIndex]) {
+        // Highlight the correct letter in yellow
+        var paragraphText = paragraphDisplay.textContent;
+        paragraphText = paragraphText.substring(0, currentLetterIndex) + '<span style="background-color: yellow;">' + currentWords[currentWordIndex][currentLetterIndex] + '</span>' + paragraphText.substring(currentLetterIndex + 1);
+        paragraphDisplay.innerHTML = paragraphText;
+
+        currentLetterIndex++;
+
+        // If all letters in the current word have been typed correctly
+        if (currentLetterIndex === currentWords[currentWordIndex].length) {
+          // Move to the next word
+          currentWordIndex++;
+          currentLetterIndex = 0;
+
+          // Clear the text box
           inputField.value = "";
+
+          // If the user has completed the entire paragraph
+          if (currentWordIndex === currentWords.length) {
+            paragraphsComplete++;
+
+            // Display a "You Win!" message
+            paragraphDisplay.textContent = "You Win!";
+            // Hide the text box
+            inputField.style.display = "none";
+            // Stop the timer
+            stopTimer();
+          }
         }
       }
     });
 
-    // starts repeated action (timer) that updates every 10 milliseconds (0.01)
+    // Starts repeated action (timer) that updates every 10 milliseconds (0.01)
     function startTimer() {
       timerInterval = setInterval(updateTimer, 10);
     }
 
-    // stops the timer when it is called. It is called after the user has typed 5 words
+    // Stops the timer when it is called. It is called after the user has typed the entire paragraph
     function stopTimer() {
-      // makes the action above (timer) stop
+      // Makes the action above (timer) stop
       clearInterval(timerInterval);
-      // alert(timer.textContent)
-      // Waits 1 second after the game is complete. Then it asks for the user's name. Afterwards, your information is added to the database at the bottom.
+
+      // Waits 1 second after the game is complete. Then it asks for the user's name.
       setTimeout(()=> {
-         username = alert('Congratulations! You got a time of ' + actualTime + 'seconds!');
-        //  create_times();
-        //  onPageLoad();
-        //  1 second after your username has been given, the page reloads. This allows you to view your score on the leaderboard
-        setTimeout(()=> {
-          location.reload();
-        }
-        ,1000);
-      }
-      ,1000);
+         var username = prompt('Congratulations! You completed the paragraph in ' + actualTime + ' seconds! Enter your name:');
+         // Save or process the username as needed
+         // Then reload the page
+         location.reload();
+      }, 1000);
     }
 
-    // this function updates the timer every millisecond
+    // This function updates the timer every millisecond
     function updateTimer() {
       var currentTime = new Date();
-      // subtracts the currentTime from the startTime to calculate the elapsed time in hundredths of a second
+      // Subtract the currentTime from the startTime to calculate the elapsed time in hundredths of a second
       var elapsedTime = Math.floor((currentTime - startTime) / 10);
       // Converts the elapsed time to seconds with two decimal places
-      actualTime = (elapsedTime / 100).toFixed(2)
-      // displays on the frontend
+      var actualTime = (elapsedTime / 100).toFixed(2);
+      // Displays on the frontend
       timer.textContent = "Time: " + actualTime + " seconds";
     }
-
-    // this function posts to the database
-//     function create_times(){
-//         const body = {
-//             uid: username,
-//             totaltime: actualTime,
-//         };
-//         const requestOptions = {
-//             method: 'POST',
-//             body: JSON.stringify(body),
-//             headers: {
-//                 "content-type": "application/json",
-//                 'Authorization': 'Bearer my-token',
-//             },
-//         };
-//         // Fetch API call to the database to create a new database entry
-//         fetch(create_fetch, requestOptions)
-//         .then(response => {
-//             // trap error response from Web API
-//             // response contains valid result
-//             response.json().then(data => {
-//                 console.log(data);
-//                 // tableContainer.innerHTML = ''
-//             })
-//         })
-//     }
-
-//   // this code runs when the page loads
-//   $(document).ready(function() {
-//     // fetches the contents of the database from the below url
-//     fetch('https://petitepandas.duckdns.org/api/times/', { mode: 'cors' })
-//     .then(response => {
-//       if (!response.ok) {
-//         throw new Error('API response failed');
-//       }
-//       return response.json();
-//     })
-//     .then(data => {
-//       for (const row of data) {
-//         // appends the data to the table
-//         $('#flaskBody').append('<tr><td>' + 
-//             row.id + '</td><td>' + 
-//             row.uid + '</td><td>' + 
-//             row.totaltime + '</td></tr>');
-//       }
-//       // displays the table
-//       $("#flaskTable").DataTable();
-//     })
-//     .catch(error => {
-//       console.error('Error:', error);
-//     });
-//   });
   </script>
 </body>
 </html>
