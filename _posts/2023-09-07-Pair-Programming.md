@@ -63,6 +63,13 @@ Remember, this review is based solely on the provided code snippet, and I don't 
 
 ---
 
+## What we could add/improve on
+- Want to research YamlDB to add a leaderboard
+- Want to highlight incorrectly typed letters in another color
+- Takes a long time for the words to show up
+
+---
+
 CSA Code, Code, Coding assignment.
 
 Review. Teacher posts for JS Itunes API, JS Input, JS Output w/jquery, JS Output w/API.
@@ -72,7 +79,7 @@ Option 2. Combine all the concepts into something unique and you feel is awesome
 
 - [x] Make a plan on what you and your Pair plan to do, this must exist by Monday night. You should have proof in live review of a draft in GitHub Issues history.
 - [ ] Ask me questions and interact with me on Slack or live on Mon, Tue…. particularly interact with me when you have posted a draft of your plan. This would be considered Collaboration. Try to get feedback from me on Plan.
-- [ ] Code Must have Data!!!
+- [x] Code Must have Data!!!
 - [x] Must have Input.
 - [x] Must have Output.
 - [x] Input must impact Output.
@@ -80,7 +87,7 @@ Option 2. Combine all the concepts into something unique and you feel is awesome
 - [x] Bring these into GitHub pages repo as Hacks or Tangibles on you Time Box page.
 - [x] Review code with ChatGPT, perhaps ask "Can you provide a review of this code?" Then paste code. Currate response into page(s).
 - [ ] Plan your Pair Showcase, know exactly what you will present. Try to do it within 3 minutes.
-- [ ] Build a review ticket in Time Box page to accelerate discussion.
-- [ ] Be ready for Live review on Wed through Friday
+- [x] Build a review ticket in Time Box page to accelerate discussion.
+- [x] Be ready for Live review on Wed through Friday
 
 ---
