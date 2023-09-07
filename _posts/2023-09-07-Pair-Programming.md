@@ -7,6 +7,11 @@ type: tangibles
 courses: { csa: {week: 3} }
 ---
 
+## Draft
+Nitro Type - a game where the user is given a string of random words and they have to correctly type them as fast as possible. Based on the time it takes them, we then calculate how many words per minute they'd be able to type and maybe save their own high scores locally in a leaderboard(?)
+
+---
+
 ## Feedback (ChatGPT)
 Your code appears to be a web page for a typing game. I'll review it for you:
 
@@ -51,8 +56,10 @@ Remember, this review is based solely on the provided code snippet, and I don't 
 
 ---
 
-## Draft
-Nitro Type - a game where the user is given a string of random words and they have to correctly type them as fast as possible. Based on the time it takes them, we then calculate how many words per minute they'd be able to type and maybe save their own high scores locally in a leaderboard(?)
+## Issues we are having
+- Need an API that can give random sentences (currently requesting 5 words from a random word API)
+- Need to fix problem where if you type in incorrect letter, it replaces the actual letter you have to type
+- Need to fix the max accuracy score being 93%
 
 ---
 

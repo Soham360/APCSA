@@ -185,14 +185,13 @@ type: tangibles
       var accuracy = Math.round((highlightedLetters / totalLetters) * 100);
       document.getElementById("accuracy-counter").textContent = "Accuracy: " + accuracy + "%";
 
-      if (enteredText === currentParagraph) {
+      if (enteredText === currentParagraph || enteredText.length >= currentParagraph.length) {
         paragraphDisplay.textContent = "You Win!";
         inputField.style.display = "none";
         stopTimer();
         setTimeout(loadNewParagraph, 1000);
       }
     });
-
     loadNewParagraph();
   </script>
 </body>
