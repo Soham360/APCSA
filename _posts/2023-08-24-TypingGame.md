@@ -5,13 +5,11 @@ layout: post
 title: Nitro Type
 permalink: /nitrotype/
 courses: {csa: {week: 3} }
-type: hacks
+type: tangibles
 ---
-
 <html>
 <head>
   <style>
-    /* styling */
     body {
       text-align: center;
     }
@@ -33,6 +31,14 @@ type: hacks
       font-size: 18px;
       margin-top: 20px;
     }
+    #result {
+      font-size: 18px;
+      margin-top: 20px;
+    }
+    #accuracy-counter {
+      font-size: 18px;
+      margin-top: 20px;
+    }
     .result {
       border-radius: 12px;
       border: 1px solid black;
@@ -41,17 +47,60 @@ type: hacks
       flex-shrink: 0;
     }
   </style>
+  <!-- Importing table and sorting code -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>var define = null;</script>
+  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
 </head>
 <body>
-  <!-- div for the game. Includes the paragraph being displayed, the inputs, and the timer -->
   <div id="game-container">
-    <p id="paragraph-display">Start typing...</p>
-    <input type="text" id="input-field" autofocus>
+    <p id="paragraph-display"></p>
+    <textarea id="input-field" rows="4"></textarea>
     <p id="timer"></p>
+    <p id="accuracy-counter">Accuracy: 0%</p>
+    <p id="result"></p>
   </div>
 
   <script>
-    // This is the paragraph bank
+    async function fetchRandomWord() {
+        const url = 'https://free-random-word-generator-api.p.rapidapi.com/random-word';
+        const options = {
+            method: 'GET',
+            headers: {
+                'X-RapidAPI-Key': '8402362dd5mshc2923fbd8d7b266p1b0f84jsn4229cc0ec9ac',
+                'X-RapidAPI-Host': 'free-random-word-generator-api.p.rapidapi.com'
+            }
+        };
+
+        try {
+            const response = await fetch(url, options);
+            const result = await response.text();
+            return result;
+        } catch (error) {
+            console.error(error);
+            return null;
+        }
+    }
+
+    async function loadNewParagraph() {
+      var newWord = await fetchRandomWord() + await fetchRandomWord() + await fetchRandomWord() + await fetchRandomWord() + await fetchRandomWord();
+      newWord = newWord.replaceAll("\"", "");
+      if (newWord) {
+        currentParagraph = newWord.trim();
+        currentCharIndex = 0;
+        startTime = null;
+        timer.textContent = "Time: 0.00 seconds";
+        inputField.value = "";
+        paragraphDisplay.innerHTML = currentParagraph;
+        inputField.style.display = "block";
+        document.getElementById("accuracy-counter").textContent = "Accuracy: 0%";
+        resultElement.textContent = "";
+      } else {
+        alert("Failed to fetch a new word. Please try again later.");
+      }
+    }
+
     var paragraphs = [
       "Determine retiree thought improve truth active",
       "Polish curve stun addicted extreme affect present",
@@ -61,113 +110,90 @@ type: hacks
       "Entry circulation supply accountant admire spot",
       "Assignment bracket satellite agony equal afford",
       "Wash throw mistreat measure competition education",
-      "Tolerate"
     ];
 
-    // This is the counter for how many paragraphs have been completed
-    var paragraphsComplete = 0;
-
-    // This generates a random integer from 0 to the number of paragraphs - 1
-    var currentParagraphIndex = Math.floor(Math.random() * paragraphs.length);
-
-    // This uses the random integer from above as an index for a random paragraph from the paragraph bank
-    var currentParagraph = paragraphs[currentParagraphIndex];
-
-    // Split the current paragraph into an array of words
-    var currentWords = currentParagraph.split(" ");
-
-    // Track the current word index within the paragraph
-    var currentWordIndex = 0;
-
-    // Track the current letter index within the current word
-    var currentLetterIndex = 0;
-
-    // This sets the startTime and the timerInterval to undefined values
+    var currentParagraph = '';
+    var currentCharIndex = 0;
     var startTime = null;
     var timerInterval = null;
 
-    // This is the code that replaces the previous paragraph
     var paragraphDisplay = document.getElementById("paragraph-display");
-    // This gets the input from the text box
     var inputField = document.getElementById("input-field");
-    // This is the code that allows the timer to update
     var timer = document.getElementById("timer");
+    var resultElement = document.getElementById("result");
 
-    // This displays the random paragraph
-    paragraphDisplay.textContent = currentParagraph;
+    // Function to randomly select a paragraph
+    function selectRandomParagraph() {
+      return paragraphs[Math.floor(Math.random() * paragraphs.length)];
+    }
 
-    // Function starts as soon as it detects an input
+    function startTimer() {
+      timerInterval = setInterval(updateTimer, 10);
+    }
+
+    function stopTimer() {
+      clearInterval(timerInterval);
+
+      setTimeout(()=> {
+         var username = prompt('Congratulations! You completed the paragraph in ' + actualTime + ' seconds! Enter your name:');
+         location.reload();
+      }, 1000);
+    }
+
+    function updateTimer() {
+      var currentTime = new Date();
+      var elapsedTime = Math.floor((currentTime - startTime) / 10);
+      var actualTime = (elapsedTime / 100).toFixed(2);
+      timer.textContent = "Time: " + actualTime + " seconds";
+    }
+
+    function highlightText(enteredText) {
+      var paragraphText = currentParagraph.slice(0, enteredText.length);
+
+      var highlightedText = '';
+      for (var i = 0; i < enteredText.length; i++) {
+        if (enteredText[i] === paragraphText[i]) {
+          highlightedText += '<span style="background-color: yellow;">' + enteredText[i] + '</span>';
+        } else {
+          highlightedText += enteredText[i];
+        }
+      }
+
+      paragraphDisplay.innerHTML = highlightedText + currentParagraph.slice(enteredText.length);
+    }
+
     inputField.addEventListener("input", function(event) {
       var enteredText = event.target.value;
+      var totalLetters = enteredText.length;
+      var highlightedLetters = 0;
 
-      // Starts the timer after the user inputs something into the textbox
       if (!startTime) {
         startTime = new Date();
         startTimer();
       }
 
-      // Verify if the entered letter is correct
-      if (enteredText === currentWords[currentWordIndex][currentLetterIndex]) {
-        // Highlight the correct letter in yellow
-        var paragraphText = paragraphDisplay.textContent;
-        paragraphText = paragraphText.substring(0, currentLetterIndex) + '<span style="background-color: yellow;">' + currentWords[currentWordIndex][currentLetterIndex] + '</span>' + paragraphText.substring(currentLetterIndex + 1);
-        paragraphDisplay.innerHTML = paragraphText;
+      highlightText(enteredText);
 
-        currentLetterIndex++;
+      var paragraphText = currentParagraph.slice(0, totalLetters);
 
-        // If all letters in the current word have been typed correctly
-        if (currentLetterIndex === currentWords[currentWordIndex].length) {
-          // Move to the next word
-          currentWordIndex++;
-          currentLetterIndex = 0;
-
-          // Clear the text box
-          inputField.value = "";
-
-          // If the user has completed the entire paragraph
-          if (currentWordIndex === currentWords.length) {
-            paragraphsComplete++;
-
-            // Display a "You Win!" message
-            paragraphDisplay.textContent = "You Win!";
-            // Hide the text box
-            inputField.style.display = "none";
-            // Stop the timer
-            stopTimer();
-          }
+      for (var i = 0; i < totalLetters; i++) {
+        if (enteredText[i] === paragraphText[i]) {
+          highlightedLetters++;
         }
+      }
+
+      var accuracy = Math.round((highlightedLetters / totalLetters) * 100);
+      document.getElementById("accuracy-counter").textContent = "Accuracy: " + accuracy + "%";
+
+      if (enteredText === currentParagraph) {
+        paragraphDisplay.textContent = "You Win!";
+        inputField.style.display = "none";
+        stopTimer();
+        setTimeout(loadNewParagraph, 1000);
       }
     });
 
-    // Starts repeated action (timer) that updates every 10 milliseconds (0.01)
-    function startTimer() {
-      timerInterval = setInterval(updateTimer, 10);
-    }
-
-    // Stops the timer when it is called. It is called after the user has typed the entire paragraph
-    function stopTimer() {
-      // Makes the action above (timer) stop
-      clearInterval(timerInterval);
-
-      // Waits 1 second after the game is complete. Then it asks for the user's name.
-      setTimeout(()=> {
-         var username = prompt('Congratulations! You completed the paragraph in ' + actualTime + ' seconds! Enter your name:');
-         // Save or process the username as needed
-         // Then reload the page
-         location.reload();
-      }, 1000);
-    }
-
-    // This function updates the timer every millisecond
-    function updateTimer() {
-      var currentTime = new Date();
-      // Subtract the currentTime from the startTime to calculate the elapsed time in hundredths of a second
-      var elapsedTime = Math.floor((currentTime - startTime) / 10);
-      // Converts the elapsed time to seconds with two decimal places
-      var actualTime = (elapsedTime / 100).toFixed(2);
-      // Displays on the frontend
-      timer.textContent = "Time: " + actualTime + " seconds";
-    }
+    loadNewParagraph();
   </script>
 </body>
 </html>

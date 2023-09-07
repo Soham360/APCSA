@@ -4,11 +4,9 @@ layout: default
 <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
 
   <header class="post-header">
-    <h1 
-      class="post-title p-name" itemprop="name headline">{{ page.title | escape }}
+    <h1 class="post-title p-name" itemprop="name headline">{{ page.title | escape }}
       • {% include read_time.html -%}
     </h1>
-
     <p class="post-meta post-meta-title">
       {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
       <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
@@ -30,16 +28,6 @@ layout: default
       {%- endif %}
     </p>
 
-    {%- if page.description -%}
-      <h2>Description</h2>
-      {%- if site.html_escape.description -%}
-        <p class="page-description">{{ page.description | escape }}</p>
-      {%- else -%}
-        <p class="page-description">{{ page.description }}</p>
-      {%- endif -%}
-    {%- endif -%}
-    
-
     {% if page.categories.size > 0 and site.show_tags %}
       <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
       {% for category in  page.categories  %}
@@ -54,17 +42,75 @@ layout: default
       </p>
     {% endif %}
 
-    {%- if page.toc -%}
-      {% include toc.html html=content %}
-    {%- endif -%}
-
   </header>
 
   <div class="post-content e-content" itemprop="articleBody">
-    {{ content }}
+    {{ content | toc  }}
   </div>
+
   {%- if page.comments -%}
     {%- include utterances.html -%}
   {%- endif -%}
   <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
 </article>
+
+<style>
+  ul.post-content{
+    background-color:black;
+    margin-right:500px;
+  }
+  h1{
+    color: #000000;
+  }
+  h2{
+    text-align:left;
+    margin-left:10px;
+    color: #000000;
+  }
+  h3{
+    color: #000000;
+    margin-left:10px;
+  }
+  p{
+    text-align: left;
+  }
+  code.language-Java{
+    color:#FFFFFF;
+    display:block;
+    padding: 10px;
+    background-color: #383444;
+  }
+  td{
+    border: 2px solid #222222;
+    border-radius: 8px;
+    padding: 5px;
+    color: #383444;
+  }
+  p.post-meta.post-meta-title{
+    text-align: center;
+  }
+  pre.highlight{
+    background-color: #383444;
+    padding: 10px;
+    color:white;
+
+  }
+  header{
+    text-align:center;
+  }
+  article{
+    margin:100px;
+  }
+  section{
+    background-color: rgb(174, 219, 255);
+  }
+  th{
+    font-size: 22px;
+    color: #58595b;
+    text-align: center;
+}
+  table{
+    margin-left: auto;
+    margin-right: auto;
+  }
+</style>

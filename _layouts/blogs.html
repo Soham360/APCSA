@@ -4,7 +4,9 @@ layout: default
 
 <div class="home">
   {%- if page.title -%}
+    <br><br>
     <h1 class="page-heading">{{ page.title }}</h1>
+    <br><br>
   {%- endif -%}
 
   {{ content | markdownify }}
@@ -78,3 +80,16 @@ layout: default
   {%- endif -%}
 
 </div>
+<style>
+  h1.page-heading {
+    text-align: center;
+    font-size: 35px;
+    color: #000000;
+  }
+
+  .post-container {
+    text-align:left;
+    padding: 0px;
+    background-color: rgb(217, 238, 255)
+  }
+</style>
