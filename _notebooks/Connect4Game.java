@@ -1,172 +1,155 @@
-import java.util.Arrays;
-import java.util.Random;
 import java.util.Scanner;
 
 public class Connect4Game {
-    private static final int ROWS = 6;
-    private static final int COLUMNS = 7;
-    private static final char EMPTY = ' ';
-    private static final char PLAYER1_SYMBOL = 'X';
-    private static final char PLAYER2_SYMBOL = 'O';
 
-    private char[][] board; // 2D array to represent the game board
-    private boolean player1Turn; // Keeps track of whose turn it is
-    private Random random; // Used for generating random moves for player 2
+    public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
 
-    public Connect4Game() {
-        // Initialize the board and set initial conditions
-        board = new char[ROWS][COLUMNS];
-        for (int row = 0; row < ROWS; row++) {
-            Arrays.fill(board[row], EMPTY); // Fill the board with empty spaces
+        // Create a 2D array to represent the game grid
+        char[][] grid = new char[6][7];
+
+        // Initialize the array with empty spaces
+        for (int row = 0; row < grid.length; row++){
+            for (int col = 0; col < grid[0].length; col++){
+                grid[row][col] = ' ';
+            }
         }
-        player1Turn = true; // Player 1 starts first
-        random = new Random(); // Initialize the random number generator
+
+        int turn = 1;
+        char player = 'X';
+        boolean winner = false;        
+
+        // Play a turn
+        while (winner == false && turn <= 42){
+            boolean validPlay;
+            int play;
+            do {
+                display(grid);
+
+                System.out.print("Player " + player + ", choose a column: ");
+                play = in.nextInt();
+
+                // Validate the player's move
+                validPlay = validate(play,grid);
+
+            }while (validPlay == false);
+
+            // Drop the checker into the selected column
+            for (int row = grid.length-1; row >= 0; row--){
+                if(grid[row][play] == ' '){
+                    grid[row][play] = player;
+                    break;
+                }
+            }
+
+            // Determine if there is a winner
+            winner = isWinner(player,grid);
+
+            // Switch players for the next turn
+            if (player == 'X'){
+                player = 'O';
+            } else{
+                player = 'X';
+            }
+
+            turn++;            
+        }
+        display(grid);
+
+        if (winner){
+            if (player=='O'){
+                System.out.println("Player O won");
+            } else{
+                System.out.println("Player X won");
+            }
+        } else{
+            System.out.println("Tie game");
+        }
+
     }
 
-    public void printBoard() {
-        // Print the current state of the board to the console
-        for (int row = 0; row < ROWS; row++) {
-            for (int col = 0; col < COLUMNS; col++) {
-                System.out.print("|" + board[row][col]); // Print each cell with vertical separator
+    // Display the current state of the game grid
+    public static void display(char[][] grid){
+        System.out.println(" 0 1 2 3 4 5 6");
+        System.out.println("---------------");
+        for (int row = 0; row < grid.length; row++){
+            System.out.print("|");
+            for (int col = 0; col < grid[0].length; col++){
+                System.out.print(grid[row][col]);
+                System.out.print("|");
             }
-            System.out.println("|"); // Move to the next row
+            System.out.println();
+            System.out.println("---------------");
         }
-        for (int col = 0; col < COLUMNS; col++) {
-            System.out.print(" " + (col + 1)); // Print column numbers at the bottom
-        }
+        System.out.println(" 0 1 2 3 4 5 6");
         System.out.println();
     }
 
-    public boolean isColumnFull(int col) {
-        // Check if a column is already full (no more moves can be made in that column)
-        return board[0][col] != EMPTY; // If the top cell is not empty, the column is full
-    }
-
-    public boolean isBoardFull() {
-        // Check if the board is completely filled (no more moves can be made)
-        for (int col = 0; col < COLUMNS; col++) {
-            if (!isColumnFull(col)) {
-                return false; // If any column is not full, the board is not full
-            }
-        }
-        return true; // All columns are full, board is full
-    }
-
-    public void dropPiece(int col, char symbol) {
-        // Drop a piece into a column (make a move)
-        for (int row = ROWS - 1; row >= 0; row--) {
-            if (board[row][col] == EMPTY) {
-                board[row][col] = symbol; // Find the first empty cell from the bottom and place the piece
-                break;
-            }
-        }
-    }
-
-    public boolean checkWin(char symbol) {
-        // Check if the player with the given symbol has won
-        // Check for horizontal wins
-        for (int row = 0; row < ROWS; row++) {
-            for (int col = 0; col <= COLUMNS - 4; col++) {
-                if (board[row][col] == symbol && board[row][col + 1] == symbol &&
-                        board[row][col + 2] == symbol && board[row][col + 3] == symbol) {
-                    return true; // Four consecutive pieces in a row
-                }
-            }
+    // Validate the player's move
+    public static boolean validate(int column, char[][] grid){
+        // Check if the column is valid
+        if (column < 0 || column >= grid[0].length){
+            return false;
         }
 
-        // Check for vertical wins
-        for (int col = 0; col < COLUMNS; col++) {
-            for (int row = 0; row <= ROWS - 4; row++) {
-                if (board[row][col] == symbol && board[row + 1][col] == symbol &&
-                        board[row + 2][col] == symbol && board[row + 3][col] == symbol) {
-                    return true; // Four consecutive pieces in a column
-                }
-            }
+        // Check if the column is full
+        if (grid[0][column] != ' '){
+            return false;
         }
-
-        // Check for diagonal wins (from bottom-left to top-right)
-        for (int row = 3; row < ROWS; row++) {
-            for (int col = 0; col <= COLUMNS - 4; col++) {
-                if (board[row][col] == symbol && board[row - 1][col + 1] == symbol &&
-                        board[row - 2][col + 2] == symbol && board[row - 3][col + 3] == symbol) {
-                    return true; // Four consecutive pieces in a diagonal line
-                }
-            }
-        }
-
-        // Check for diagonal wins (from bottom-right to top-left)
-        for (int row = 3; row < ROWS; row++) {
-            for (int col = 3; col < COLUMNS; col++) {
-                if (board[row][col] == symbol && board[row - 1][col - 1] == symbol &&
-                        board[row - 2][col - 2] == symbol && board[row - 3][col - 3] == symbol) {
-                    return true; // Four consecutive pieces in a diagonal line
-                }
-            }
-        }
-
-        return false; // No winning condition found
-    }
-
-    public boolean play(int col) {
-        // Play a move in the specified column
-        if (col < 0 || col >= COLUMNS || isColumnFull(col)) {
-            return false; // Invalid move (column out of bounds or full)
-        }
-
-        char currentPlayerSymbol = player1Turn ? PLAYER1_SYMBOL : PLAYER2_SYMBOL;
-        dropPiece(col, currentPlayerSymbol); // Make the move
-        player1Turn = !player1Turn; // Switch turns
 
         return true;
     }
 
-    public static void main(String[] args) {
-        // Main game loop
-        Connect4Game game = new Connect4Game(); // Initialize the game
-        Scanner scanner = new Scanner(System.in);
-
-        System.out.println("Welcome to Connect 4!");
-
-        while (true) {
-            game.printBoard(); // Display current state of the board
-
-            if (game.isBoardFull()) {
-                System.out.println("It's a draw!"); // Game ends in a draw
-                break;
-            }
-
-            if (game.player1Turn) {
-                int col;
-                do {
-                    System.out.print("Player 1 (X), enter column (1-7): ");
-                    while (!scanner.hasNextInt()) {
-                        System.out.print("Please enter a valid column (1-7): ");
-                        scanner.next(); // Clear invalid input
-                    }
-                    col = scanner.nextInt() - 1; // Adjust for array index (0-based)
-                } while (!game.play(col));
-
-                if (game.checkWin(PLAYER1_SYMBOL)) {
-                    game.printBoard();
-                    System.out.println("You win!"); // Player 1 wins
-                    break;
+    // Check if a player has won
+    public static boolean isWinner(char player, char[][] grid){
+        // Check for 4 in a row horizontally
+        for(int row = 0; row < grid.length; row++){
+            for (int col = 0; col < grid[0].length - 3; col++){
+                if (grid[row][col] == player &&
+                    grid[row][col+1] == player &&
+                    grid[row][col+2] == player &&
+                    grid[row][col+3] == player){
+                    return true;
                 }
-            } else {
-                int randomCol;
-                do {
-                    randomCol = game.random.nextInt(COLUMNS);
-                } while (game.isColumnFull(randomCol));
+            }           
+        }
 
-                System.out.println("Player 2 (O) selected column " + (randomCol + 1));
-                game.play(randomCol);
-                if (game.checkWin(PLAYER2_SYMBOL)) {
-                    game.printBoard();
-                    System.out.println("Computer wins, better luck next time!"); // Player 2 (computer) wins
-                    break;
+        // Check for 4 in a row vertically
+        for(int row = 0; row < grid.length - 3; row++){
+            for(int col = 0; col < grid[0].length; col++){
+                if (grid[row][col] == player &&
+                    grid[row+1][col] == player &&
+                    grid[row+2][col] == player &&
+                    grid[row+3][col] == player){
+                    return true;
                 }
             }
         }
 
-        scanner.close(); // Close the scanner
+        // Check for 4 in a row diagonally (upward)
+        for(int row = 3; row < grid.length; row++){
+            for(int col = 0; col < grid[0].length - 3; col++){
+                if (grid[row][col] == player &&
+                    grid[row-1][col+1] == player &&
+                    grid[row-2][col+2] == player &&
+                    grid[row-3][col+3] == player){
+                    return true;
+                }
+            }
+        }
+
+        // Check for 4 in a row diagonally (downward)
+        for(int row = 0; row < grid.length - 3; row++){
+            for(int col = 0; col < grid[0].length - 3; col++){
+                if (grid[row][col] == player &&
+                    grid[row+1][col+1] == player &&
+                    grid[row+2][col+2] == player &&
+                    grid[row+3][col+3] == player){
+                    return true;
+                }
+            }
+        }
+
+        return false;
     }
 }
