@@ -10,63 +10,79 @@ type: tangibles
 
 <html>
 <head>
-  <style>
-    body {
-      text-align: center;
-    }
-    #game-container {
-      width: 400px;
-      margin: 0 auto;
-    }
-    #paragraph-display {
-      font-size: 24px;
-      margin-bottom: 20px;
-    }
-    #input-field {
-      font-size: 18px;
-      padding: 5px;
-      width: 100%;
-      box-sizing: border-box;
-    }
-    #timer {
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    #accuracy-counter {
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    #wpm-counter {
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    #result {
-      font-size: 18px;
-      margin-top: 20px;
-    }
-    .result {
-      border-radius: 12px;
-      border: 1px solid black;
-      padding: 20px;
-      max-width: 300px;
-      flex-shrink: 0;
-    }
-  </style>
-  <!-- Importing table and sorting code -->
-  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
-  <script type="text/javascript" language="javascript" src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-  <script>var define = null;</script>
-  <script type="text/javascript" language="javascript" src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nitro Type</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            text-align: center;
+            background-color: #f8f8f8; /* Light gray background */
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            padding: 10px 0;
+            font-size: 24px;
+        }
+        footer {
+            background-color: #333; /* Dark background */
+            color: #fff; /* White text */
+            padding: 10px 0;
+            font-size: 16px;
+        }
+        #game-container {
+            width: 400px;
+            margin: 0 auto;
+            background-color: #fff; /* White background */
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        #paragraph-display {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #input-field {
+            font-size: 18px;
+            padding: 10px;
+            width: calc(100% - 20px);
+            box-sizing: border-box;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        #timer,
+        #accuracy-counter,
+        #wpm-counter,
+        #result {
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        .result {
+            border-radius: 12px;
+            border: 1px solid black;
+            padding: 20px;
+            max-width: 300px;
+            flex-shrink: 0;
+        }
+    </style>
 </head>
 <body>
-  <div id="game-container">
-    <p id="paragraph-display"></p>
-    <textarea id="input-field" rows="4"></textarea>
-    <p id="timer"></p>
-    <p id="accuracy-counter">Accuracy: 0%</p>
-    <p id="wpm-counter">Words per Minute: 0</p>
-    <p id="result"></p>
-  </div>
+    <header>
+        Nitro Type
+    </header>
+    <div id="game-container">
+        <p id="paragraph-display"></p>
+        <textarea id="input-field" rows="4"></textarea>
+        <p id="timer"></p>
+        <p id="accuracy-counter">Accuracy: 0%</p>
+        <p id="wpm-counter">Words per Minute: 0</p>
+        <p id="result"></p>
+    </div>
 
   <script>
     var totalWords = 0;
