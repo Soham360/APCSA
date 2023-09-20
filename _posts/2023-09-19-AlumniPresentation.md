@@ -8,17 +8,17 @@ courses: { csa: {week: 5} }
 ---
 
 # Takeaways
-The alumni gave some really helpful advice about computer science. They said getting into UCSD's computer science program can be really tough, like winning a lottery, so considering mechanical engineering might be a slightly easier option. They also stressed the importance of applying to lots of places because it's hard to know what will work out.
+The alumni gave some really good advice about studying computer science at UCSD. They said it's pretty hard to get in, like winning a lottery, so thinking about mechanical engineering might be an easier option. They also said it's a good idea to apply to a lot of places because you never know what might work out.
 
-They talked a lot about joining clubs or activities related to coding, like CodeNinjas and teaching. They said even if computer science isn't for everyone, it's still really important to learn about because it's connected to so many things in the world.
+They talked a lot about joining clubs or groups related to coding or teaching, like CodeNinjas. They said even if computer science isn't for everyone, it's still really important to learn about because it's connected to lots of things in the world.
 
-They suggested making your own projects, like building a website or coming up with your own take on existing ones like Amazon or YouTube. They also talked about using tools like AWS and Vercel to put your projects online. They said having a personal website with your resume is a good idea, and it doesn't cost much to have your own domain.
+They suggested making your own projects, like building a website or coming up with your own version of sites. I'm thinking about recreating Amazon or YouTube. They also talked about using tools like AWS and Vercel to put your projects online. They said having your own website with your resume is a good idea, and it doesn't cost much to have your own domain ($10/year).
 
-When it comes to coding, they recommended using a tool called Tailwind CSS to make it easier and faster. They also said it's important to keep up with new software and learn how to use tools like CHATGPT. They suggested finding machine learning courses online and adding those to your resume.
+When it comes to coding, they recommended using a tool called Tailwind CSS to make it easier and faster. They also said it's important to keep up with new software and learn how to use tools like CHATGPT. In fact, Tristan said "The software tools of today were created yesterday". They suggested finding online courses about machine learning and adding those to your resume.
 
-For finding internships and jobs, they recommended using platforms like LinkedIn and Indeed. They said it's even better if someone you know can recommend you. They also mentioned that startups in San Diego might not always have formal internship programs, but if you can show them you're a good fit, they might hire you.
+For finding internships and jobs, they recommended using websites like LinkedIn and Indeed. They said it's even better if someone you know can suggest you. They also mentioned that smaller companies in San Diego might not always have official internship programs, but if you can show them you're a good fit, they might hire you.
 
-They ended by stressing how important it is to do internships while in college, because it can be really tough to find a job without that experience. Overall, their advice highlighted the value of being proactive, learning new things, and making connections in the world of computer science.
+They ended by saying how important it is to do internships while in college, because it can be really hard to find a job without that experience. Overall, their advice highlighted the value of being proactive, learning new things, and making connections in the world of computer science.
 
 ---
 
