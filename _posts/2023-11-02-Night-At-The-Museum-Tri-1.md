@@ -48,6 +48,6 @@ The APCSP and APCSA classrooms were very packed and full of students attempting 
 ---
 
 ### Extra Credit Reviews
-[Review 1](https://github.com/tuckergol/PassionProject7/issues/3)
-[Review 2](https://github.com/Cosmic-Carnage/Issues/issues/33)
-[Review 3](https://github.com/BobTheFarmer/VACTQ-Typing-Game/issues/10)
+[Review 1](https://github.com/tuckergol/PassionProject7/issues/3#issuecomment-1792007044)
+[Review 2](https://github.com/Cosmic-Carnage/Issues/issues/33#issuecomment-1792006424)
+[Review 3](https://github.com/BobTheFarmer/VACTQ-Typing-Game/issues/10#issuecomment-1792006402)
