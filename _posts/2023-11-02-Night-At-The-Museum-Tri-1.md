@@ -44,3 +44,10 @@ The art in this class room was so impressive. There were so many different style
 Here is a picture of Orlando Carcamo with his project that can tell you the weather in San Diego.
 ![]({{ site.baseurl }}/images/ORLANDO.JPG)
 The APCSP and APCSA classrooms were very packed and full of students attempting to finish their assignments. However, there were also many other groups already done with theirs. I saw many different projects including chess, a weather app, and a fitness tracker. These were all very impressive and extremely hard to create.
+
+---
+
+### Extra Credit Reviews
+[Review 1](https://github.com/tuckergol/PassionProject7/issues/3)
+[Review 2](https://github.com/Cosmic-Carnage/Issues/issues/33)
+[Review 3](https://github.com/BobTheFarmer/VACTQ-Typing-Game/issues/10)
