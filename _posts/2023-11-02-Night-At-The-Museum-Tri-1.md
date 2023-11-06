@@ -40,10 +40,12 @@ The art in this class room was so impressive. There were so many different style
 
 ---
 
-### AP Computer Science Principles
-Here is a picture of Orlando Carcamo with his project that can tell you the weather in San Diego.
-![]({{ site.baseurl }}/images/ORLANDO.JPG)
-The APCSP and APCSA classrooms were very packed and full of students attempting to finish their assignments. However, there were also many other groups already done with theirs. I saw many different projects including chess, a weather app, and a fitness tracker. These were all very impressive and extremely hard to create.
+### AP Computer Science A
+Here are some pictures from AP Comp Science A
+![]({{ site.baseurl }}/images/natmcsa1.jpeg)
+![]({{ site.baseurl }}/images/natmcsa2.jpeg)
+![]({{ site.baseurl }}/images/natmcsa3.jpeg)
+The APCSP and APCSA classrooms were very packed and full of students attempting to finish their assignments. However, there were also many other groups already done with theirs. I saw many different projects including platformer game, skatepark review website, and a stock website. These were all very impressive and extremely hard to create.
 
 ---
 
