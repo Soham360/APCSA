@@ -14,6 +14,9 @@ type: tangibles
 ## End of trimester reflection
 - [Link]()
 
+## Night At the Museum
+- [Link](https://soham360.github.io/APCSA//2023/11/02/Night-At-The-Museum-Tri-1.html)
+
 ## Student Lesson Grades
 - [Link](https://github.com/Soham360/APCSA/issues/5)
 
@@ -29,6 +32,8 @@ type: tangibles
 
 ### CORs Error
 
+![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/423350a1-13c7-4c01-9273-e39b85f143fb)
+![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/1aee2f39-5792-425e-8cd4-bc2bfad0f470)
 
 ## Commit History
 
