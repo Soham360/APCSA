@@ -27,6 +27,8 @@ type: tangibles
 
 # Meaningful Commits
 
+## CORs Error
+
 
 # Commit History
 
