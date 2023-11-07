@@ -8,6 +8,8 @@ courses: {csa: {week: 12} }
 type: tangibles
 ---
 
+# Trimester 1 Individual Review
+
 ## Collegeboard MC + Quiz Reflection
 - [Link](https://soham360.github.io/APCSA//2023/11/05/MCQ2014-Reflection.html)
 
@@ -29,13 +31,25 @@ type: tangibles
 3. [Review 3](https://github.com/BobTheFarmer/VACTQ-Typing-Game/issues/10#issuecomment-1792006402)
 
 ## Meaningful Commits
+### Weather API
+![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/c747670b-b0c8-43a5-a77b-976e614af342)
+![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/bc802a3f-c205-4485-ae79-be9fd03ee178)
 
 ### CORs Error
-
 ![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/423350a1-13c7-4c01-9273-e39b85f143fb)
+- I created a file called `CorsConfig.java` and I added this code in it. 
+- It tells the application to allow requests from different websites (origins) to interact with it.
+- It allows specific types of requests like getting information, sending new information, updating, and deleting.
+- It allows any type of information to be sent in the request.
+- It says not to send any sensitive information (credentials) along with the request.
 ![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/1aee2f39-5792-425e-8cd4-bc2bfad0f470)
+- Added this line to the Weather API
+- Allows requests from any origin and with any headers to access the API.
 
 ## Commit History
 
-![]({{ site.baseurl }}/images/CommitTri1Backend.png "Backend Commits")
 ![]({{ site.baseurl }}/images/CommitTri1Frontend.png "Frontend Commits")
+![]({{ site.baseurl }}/images/CommitTri1Backend.png "Backend Commits")
+
+## Linkedin Post
+- [Link](https://www.linkedin.com/feed/update/urn:li:activity:7127567401176485888/)
