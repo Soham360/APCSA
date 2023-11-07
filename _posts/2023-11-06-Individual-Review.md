@@ -30,14 +30,19 @@ When I started this trimesters, I had no knowledge of Java. In fact, I didn't kn
 
 ## Meaningful Commits
 ### Weather Feature
-- I used the existing COVID API as a template
-- The api we are using is actually 2 different APIs
-- One is a API where we input the longitude and latitude of San Diego
-- You get the other from the previous api and this one is more specific to the Del Norte Area
+#### Weather Frontend
 - In the image below you can see that I am using a get request on `https://no-papels.stu.nighthawkcodingsociety.com/api/weather/daily` in line 70
 - Then I access the second API in line 75
 - From this second API I get the currentWeather, temperature, weatherConditions, and the precipitation
 ![image](https://github.com/Soham360/sturdy-fiesta/assets/111466950/c788fc48-6291-4543-8c37-807a8204b8ac)
+
+#### Weather Backend
+- I used the existing COVID API as a template
+- The api we are using is actually 2 different APIs
+- One is a API where we input the longitude and latitude of San Diego
+- You get the other from the previous api and this one is more specific to the Del Norte Area
+![image](https://github.com/Soham360/APCSA/assets/111466950/be633df7-33f9-4088-b829-fec00330de96)
+
 
 ### Announcements Feature
 - Gets the existing announcements from the database using a GET Request
