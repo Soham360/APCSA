@@ -1,11 +1,11 @@
 ---
-toc: true
-comments: true
-layout: post
-description: My review of trimester 1
 title: Trimester 1 Individual Review
+description: My review of trimester 1
+layout: post
+comments: true
 courses: {csa: {week: 12} }
 type: tangibles
+toc: true
 ---
 
 ## Collegeboard MC + Quiz Reflection
