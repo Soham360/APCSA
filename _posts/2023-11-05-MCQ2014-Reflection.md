@@ -2,10 +2,10 @@
 toc: true
 comments: true
 layout: post
-description: My Corrections and Reflection after taking the Collegeboard MCQ3 Test
-title: MCQ3 Corrections and Reflection
+description: My Corrections and Reflection after taking the Collegeboard MCQ 2014 Test
+title: MCQ 2014 Corrections and Reflection
 courses: {csa: {week: 11} }
-type: tangibles
+type: plans
 ---
 
 # My Score

@@ -4,7 +4,7 @@ description: My review of trimester 1
 layout: post
 comments: true
 courses: {csa: {week: 12} }
-type: tangibles
+type: plans
 toc: true
 ---
 
