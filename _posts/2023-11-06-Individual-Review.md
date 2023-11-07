@@ -10,7 +10,7 @@ toc: true
 
 ## Collegeboard MC + Quiz Reflection
 - [Link](https://soham360.github.io/APCSA//2023/11/05/MCQ2014-Reflection.html)
-
+ 
 ## End of trimester reflection
 When I started this trimesters, I had no knowledge of Java. In fact, I didn't know there was a difference between Java and JavaScript. Over the trimester, I learned a lot and I can now read and understand it. It is very similar to the pseudocode that was used in last year's AP Computer Science Principles AP Exam. I've used Java a lot this trimester and I trying to force myself to do more work on the backend so I can gain a better understanding of the language. This trimester, our project was very simple but had numerous features so all of us to practice our Java skill individually. I've gained a much deeper understanding of the language and I feel like pushing myself to use it the next two trimesters like I did this trimester should help me be ready for the AP Exam and get a 5!
 
