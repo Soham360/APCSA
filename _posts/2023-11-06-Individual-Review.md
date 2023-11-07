@@ -8,8 +8,6 @@ courses: {csa: {week: 12} }
 type: tangibles
 ---
 
-# Trimester 1 Individual Review
-
 ## Collegeboard MC + Quiz Reflection
 - [Link](https://soham360.github.io/APCSA//2023/11/05/MCQ2014-Reflection.html)
 
