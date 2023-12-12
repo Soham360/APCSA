@@ -1,0 +1,28 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif; }
+  .container header {
+    background-color: #2ecc71;
+    color: #fff;
+    padding: 20px;
+    text-align: center; }
+  .container section {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd; }
+    .container section h2 {
+      color: #3498db; }
+  .container .contact a {
+    background-color: #3498db;
+    color: #fff;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-decoration: none; }
+    .container .contact a:hover {
+      background-color: #217dbb; }
+
+/*# sourceMappingURL=styles.css.map */
