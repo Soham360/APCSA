@@ -33,5 +33,10 @@ For this question, I was supposed to determine the state of the board after exec
 
 ---
 
+# My work
+![]({{ site.baseurl }}/images/2015Quiz_Work.png "MCQ 2015 Work")
+
+---
+
 # MCQ 2015 Reflection
 I performed well on this quiz, scoring 36 out of 39. The three mistakes I made were due to misunderstandings in class hierarchy, integer division, and loop functionality in code. These are areas I will focus on to improve my understanding and performance for future quizzes.
