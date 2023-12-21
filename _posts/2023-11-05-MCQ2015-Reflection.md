@@ -23,7 +23,7 @@ For this question, you were supposed to determine the output of the given statem
 ### Question 31
 ![]({{ site.baseurl }}/images/Question31_question.png)
 ![]({{ site.baseurl }}/images/Question31_answers.png "Question 31")
-For this question, I was supposed to determine the state of the board after executing a given code segment. I chose Option C, thinking it was correct but unfortunately, I was wrong. I made this choice because I misunderstood how the loops and conditions within the code were functioning together. The correct answer is Option D as it requires loops across the entire board with alternating checks for when rows and columns are even or odd. This is why the correct answer is Option D.
+For this question, I was supposed to determine the state of the board after executing a given code segment. I chose Option A, thinking it was correct but unfortunately, I was wrong. I made this choice because I misunderstood how the loops and conditions within the code were functioning together. The correct answer is Option E as it requires loops across the entire board with alternating checks for when rows and columns are even or odd. This is why the correct answer is Option E.
 
 # MCQ 2015 Reflection
 I did really well and only got 1 wrong out of 40. This was due to a very dumb mistake and I was so close to a perfect 40 out of 40. This is a really good score for me and I'll study these type of questions and try to improve next time.
