@@ -34,7 +34,7 @@ explanation:
 ---
 
 **use this format for ai quiz reflections**
-i have a reflection I have to do on a quiz. Use the template below from another quiz to write a reflection for this quiz. I got 36/39 on this quiz. Make the reflection 3 sentences long. Briefly refrence the reflections I wrote for each incorrect quiz questions:
+i have a reflection I have to do on a quiz. Use the template below from another quiz to write a reflection for this quiz. I got **score on quiz** on this quiz. Make the reflection 3 sentences long. Briefly reference the reflections I wrote for each incorrect quiz questions:
 
 template:
 I did really well and only got 1 wrong out of 40. This was due to a very dumb mistake and I was so close to a perfect 40 out of 40. This is a really good score for me and I'll study these type of questions and try to improve next time.
