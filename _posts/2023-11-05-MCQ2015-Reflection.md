@@ -36,6 +36,8 @@ For this question, I was supposed to determine the state of the board after exec
 # My work
 ![]({{ site.baseurl }}/images/2015Quiz_Work.png "MCQ 2015 Work")
 
+**DISCLAIMER:** Not the most up-to-date picture because I changed some answers and lost the paper. 😭😭
+
 ---
 
 # MCQ 2015 Reflection
