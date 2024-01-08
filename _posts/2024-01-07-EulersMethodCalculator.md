@@ -58,6 +58,9 @@ type: tangibles
             text-decoration: none;
             transform: rotate(-45deg);
         }
+        canvas {
+            border: 1px solid #000;
+        }
     </style>
 </head>
 <body>
@@ -87,6 +90,7 @@ type: tangibles
         </thead>
         <tbody id="tbody"></tbody>
     </table>
+    <canvas id="slopeFieldCanvas" width="400" height="400"></canvas>
     <script>
         var tbody = document.getElementById('tbody'),
             inputs = {
@@ -139,6 +143,34 @@ type: tangibles
             var D = 100000000000;
             return n.toString().length <= 10 ? n : Math.round(n * D) / D;
         }
+        document.addEventListener('DOMContentLoaded', function () {
+            const canvas = document.getElementById('slopeFieldCanvas');
+            const ctx = canvas.getContext('2d');
+            const equation = function (x, y) {
+                const dydxExpression = document.getElementById('dydx').value;
+                const dydx = eval(dydxExpression.replace(/x/g, x).replace(/y/g, y));
+                return dydx;
+            };
+            const stepSize = 0.2;
+            const xRange = canvas.width / 20;
+            const yRange = canvas.height / 20;
+            function drawSlopeField() {
+                for (let x = 0; x <= xRange; x += stepSize) {
+                    for (let y = 0; y <= yRange; y += stepSize) {
+                        const slope = equation(x / 20, y / 20);
+                        const angle = Math.atan(slope);
+                        const lineLength = 10;
+                        const dx = lineLength * Math.cos(angle);
+                        const dy = lineLength * Math.sin(angle);
+                        ctx.beginPath();
+                        ctx.moveTo(x, y);
+                        ctx.lineTo(x + dx, y + dy);
+                        ctx.stroke();
+                    }
+                }
+            }
+            drawSlopeField();
+            });
         update.click();
     </script>
 </body>
