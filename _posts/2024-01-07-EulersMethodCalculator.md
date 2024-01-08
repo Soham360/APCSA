@@ -76,6 +76,7 @@ type: tangibles
     $&Delta;x$: <input id="dx" type="number" class="small" value="0.25">
     <br>
     Steps: <input id="steps" type="number" class="small" value=3>
+    <br>
     <button id="update">Update</button>
     <p id="error"></p>
     <table>
@@ -90,7 +91,7 @@ type: tangibles
         </thead>
         <tbody id="tbody"></tbody>
     </table>
-    <canvas id="slopeFieldCanvas" width="400" height="400"></canvas>
+    <!-- <canvas id="slopeFieldCanvas" width="400" height="400"></canvas> -->
     <script>
         var tbody = document.getElementById('tbody'),
             inputs = {
