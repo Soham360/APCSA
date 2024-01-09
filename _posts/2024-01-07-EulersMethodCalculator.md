@@ -64,19 +64,14 @@ type: tangibles
     </style>
 </head>
 <body>
-    <script type="text/x-mathjax-config">
-        MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-    </script>
-    <script type="text/javascript" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-MML-AM_CHTML"></script>
     <h1>Euler's Method</h1>
-    Start: (<input id="xi" type="number" class="small" value=1>, <input id="yi" type="number" class="small" value=1>)
+    Start: (<input id="xi" type="number" class="small" value="1">, <input id="yi" type="number" class="small" value="1">)
     <br>
     $\frac{dy}{dx}$: <input id="dydx" type="text" value="x^2">
     <br>
     $&Delta;x$: <input id="dx" type="number" class="small" value="0.25">
     <br>
-    Steps: <input id="steps" type="number" class="small" value=3>
-    <br>
+    Steps: <input id="steps" type="number" class="small" value="3">
     <button id="update">Update</button>
     <p id="error"></p>
     <table>
@@ -91,7 +86,7 @@ type: tangibles
         </thead>
         <tbody id="tbody"></tbody>
     </table>
-    <!-- <canvas id="slopeFieldCanvas" width="400" height="400"></canvas> -->
+    <canvas id="slopeFieldCanvas" width="400" height="400"></canvas>
     <script>
         var tbody = document.getElementById('tbody'),
             inputs = {
@@ -147,15 +142,15 @@ type: tangibles
         document.addEventListener('DOMContentLoaded', function () {
             const canvas = document.getElementById('slopeFieldCanvas');
             const ctx = canvas.getContext('2d');
-            const equation = function (x, y) {
-                const dydxExpression = document.getElementById('dydx').value;
-                const dydx = eval(dydxExpression.replace(/x/g, x).replace(/y/g, y));
-                return dydx;
-            };
-            const stepSize = 0.2;
-            const xRange = canvas.width / 20;
-            const yRange = canvas.height / 20;
             function drawSlopeField() {
+                const equation = function (x, y) {
+                    const dydxExpression = document.getElementById('dydx').value;
+                    const dydx = eval(dydxExpression.replace(/x/g, x).replace(/y/g, y));
+                    return dydx;
+                };
+                const stepSize = 0.2;
+                const xRange = canvas.width / 20;
+                const yRange = canvas.height / 20;
                 for (let x = 0; x <= xRange; x += stepSize) {
                     for (let y = 0; y <= yRange; y += stepSize) {
                         const slope = equation(x / 20, y / 20);
@@ -171,7 +166,9 @@ type: tangibles
                 }
             }
             drawSlopeField();
-            });
+        });
+        // Ensure to call the update function after DOMContentLoaded
         update.click();
     </script>
 </body>
+</html>
