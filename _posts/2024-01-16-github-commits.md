@@ -31,5 +31,11 @@ I have 918 contributions over the past year.
 ## JQuery Lesson
 - I presented the CRUD aspects of jQuery and 
 
+# Collegeboard Quizes
+- [2014 MCQ](https://soham360.github.io/APCSA//2023/11/05/MCQ2014-Reflection.html)
+- [2015 MCQ](https://soham360.github.io/APCSA//2023/12/19/MCQ2015-Reflection.html)
+
+# [Trimester 1 Individual Review](https://soham360.github.io/APCSA//2023/11/06/Individual-Review.html)
+
 # Reflection
 I aim to contribute more sporadically, collaborate effectively as a scrum master, and delve deeper into automated deployment through scripting. Exploring advanced APIs like AWS or Github for data analysis is a goal, along with using commits for success prediction in live reviews. I plan to try crowd sourcing for at least one project, update my personal website with class projects, and participate in the student LinkedIn project. Additionally, I want to explore UI after a year focused on backend development with Spring/Flask/Django.
