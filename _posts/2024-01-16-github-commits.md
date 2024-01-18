@@ -26,10 +26,10 @@ I have 918 contributions over the past year.
 
 # Lessons
 ## Unit 9 Collegeboard: Inheiratence
-- I presented the 
+- I presented the Unit 9: Inheiratance of the APCSA Exam. I specifically presented the
 
 ## JQuery Lesson
-- I presented the CRUD aspects of jQuery and 
+- I presented the CRUD aspects of jQuery and gave multiple demos and code examples of implementing CRUD.
 
 # Collegeboard Quizes
 - [2014 MCQ](https://soham360.github.io/APCSA//2023/11/05/MCQ2014-Reflection.html)
