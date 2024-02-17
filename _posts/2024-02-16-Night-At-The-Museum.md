@@ -25,10 +25,8 @@ Here are some pictures of me and our group sharing and presenting our project to
 [Here are the other videos and pictures](https://drive.google.com/drive/folders/1IHRHx2Qp1lnLzPJGoOKFZKjzyYYBg8Hc?usp=sharing)
 
 ## Blog on event
-I really liked a project done by Tay, Ethan, Emaad, and Anthony. They created a website where you could see an American Sign Language word and try to copy it. They mentioned using AI to compare the user's hand sign with the actual word. The AI compares the color values of pixels from the sign image and the camera recording the user, giving a similarity score. They also had a login page, although I'm not sure why it's needed. The website looked nice, but I noticed some room for improvement, especially with darker skin tones and poor lighting affecting the AI's accuracy. Overall, their presentation was great, and I enjoyed their project.
+- I really liked a project done by Tay, Ethan, Emaad, and Anthony. They created a website where you could see an American Sign Language word and try to copy it. They mentioned using AI to compare the user's hand sign with the actual word. The AI compares the color values of pixels from the sign image and the camera recording the user, giving a similarity score. They also had a login page, although I'm not sure why it's needed. The website looked nice, but I noticed some room for improvement, especially with darker skin tones and poor lighting affecting the AI's accuracy. Overall, their presentation was great, and I enjoyed their project.
 
-image
+- One artwork that I saw from N@TM outside of Computer Science was from Drawing and Painting. I am not good at drawing or painting so I always visit the Art classes to see what the creative students made. I saw a cool artpiece that was the headshot of Mr. Mortensen but it was cut in half. The right side was on the paper and the left side was recreated by drawing it.
 
-One artwork that I saw from N@TM outside of Computer Science was from AP Studio Art. I am not good at drawing, and I am always amazed when someone draws a really goo locking drawing. The artist for this artwork uses vivid and vibrant colors that pop out of the page and draws the viewers in. I like how the painting depicts a stone road in space. The planets look good and the artist adds lighting really well to their drawing.
-
-image
+![alt text](/images/MORT.png)
