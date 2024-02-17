@@ -29,4 +29,4 @@ Here are some pictures of me and our group sharing and presenting our project to
 
 - One artwork that I saw from N@TM outside of Computer Science was from Drawing and Painting. I am not good at drawing or painting so I always visit the Art classes to see what the creative students made. I saw a cool artpiece that was the headshot of Mr. Mortensen but it was cut in half. The right side was on the paper and the left side was recreated by drawing it. I never would have though to create something like this and I thought it was so cool. I also saw all the amazing artworks in Ceramics, AP Studio Art, 3D Animation, and Photography. I saw many cool art pieces including a plane made from clay in Ceramics and a really cool looking sea glass mosaic in AP Studio Art. I saw the donuts and rooms created in 3D Animation as well as 
 
-![alt text](/images/MORT.png)
+![MORT](https://github.com/Soham360/APCSA/assets/111466950/547aa9ae-eb9d-4a08-83f9-99b168aebe5b)
