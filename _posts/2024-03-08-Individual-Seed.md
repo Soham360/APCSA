@@ -8,6 +8,9 @@ courses: {csa: {week: 11} }
 type: tangibles
 ---
 
+## Something Awesome in my Blog
+- [Eulers Method Calculator](https://soham360.github.io/APCSA//eulersmethodcalculator/)
+
 ## AP Prep
 - [2015 FRQ 1](https://soham360.github.io/APCSA/2024/02/23/2015CollegeboardFRQ-1_IPYNB_2_.html)
 - [2015 FRQ 2](https://soham360.github.io/APCSA/2024/02/23/2015CollegeboardFRQ-2_IPYNB_2_.html)
