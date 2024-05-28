@@ -24,10 +24,7 @@ Key Highlights:
 
 Video Demo:
 
-<video width="640" height="360" controls>
-  		<source src="https://youtu.be/c68lRunc81U" type="video/mp4">
-  		Your browser does not support the video tag.
-  </video>
+<iframe width="420" height="315" src="https://youtu.be/c68lRunc81U"></iframe>
 
 ---
 
@@ -43,9 +40,9 @@ Key Highlights:
 Video Demo:
 
 <video width="640" height="360" controls>
-  		<source src="/posts/videos/recipies.mp4" type="video/mp4">
-  		Your browser does not support the video tag.
-  </video>
+    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -61,9 +58,9 @@ Key Highlights:
 Video Demo:
 
 <video width="640" height="360" controls>
-  		<source src="/posts/videos/petitepandas.mp4" type="video/mp4">
-  		Your browser does not support the video tag.
-  </video>
+    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -79,9 +76,9 @@ Key Highlights:
 Video Demo:
 
 <video width="640" height="360" controls>
-  		<source src="/posts/videos/pluto.mp4" type="video/mp4">
-  		Your browser does not support the video tag.
-  </video>
+    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -97,9 +94,9 @@ Key Highlights:
 Video Demo:
 
 <video width="640" height="360" controls>
-  		<source src="/posts/videos/pluto.mp4" type="video/mp4">
-  		Your browser does not support the video tag.
-  </video>
+    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -116,6 +113,6 @@ Key Highlights:
 Video Demo:
 
 <video width="640" height="360" controls>
-  		<source src="/posts/videos/pluto.mp4" type="video/mp4">
-  		Your browser does not support the video tag.
-  </video>
+    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
