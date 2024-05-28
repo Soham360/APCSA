@@ -51,9 +51,9 @@ About the Project:
 - Petite Pandas is a comprehensive sports stats organizer designed to streamline data management for enthusiasts and analysts alike.
 
 Key Highlights:
-- Intuitive interface for effortless data organization
-- Real-time updates and analysis tools for informed decision-making
-- Collaborative features for team-based projects
+- Displays the stats for any team in the NBA in the 2022-2023 season
+- Allows the sorting of all stats (Points, Rebounds, Assists, etc.)
+- Displays the stats as a pie chart and a bar graph
 
 Video Demo:
 
@@ -81,12 +81,13 @@ Video Demo:
 
 ## Cars - Sorting Cars stats using different sorting methods:
 About the Project:
-- Pluto is more than just a daily planner; it's a holistic tool designed to enhance student productivity and organization. From bell schedule management to weather forecasts, Pluto has it all.
+- The Cars project involved creating a visual demonstration of sorting algorithms applied to car statistics. It featured a grid layout containing 12 cars, each with unique stats. Using bubble sort, selection sort, merge sort, and insertion sort, users could observe how the cars dynamically rearranged themselves based on their stats when the sort button was pressed. Additionally, a table displayed the efficiency of each sorting method.
 
 Key Highlights:
-- Bell schedule calculator for efficient time management
-- Weather integration with clothing recommendations
-- Task planner and announcements board for seamless coordination
+- Visual representation of sorting algorithms applied to car stats
+- Utilization of bubble sort, selection sort, merge sort, and insertion sort
+- Dynamic movement of cars to their sorted positions upon sorting
+- Comparative table showcasing the efficiency of each sorting method
 
 Video Demo:
 
