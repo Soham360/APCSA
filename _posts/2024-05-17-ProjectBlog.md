@@ -24,7 +24,10 @@ Key Highlights:
 
 Video Demo:
 
-
+<video width="640" height="360" controls>
+    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
 
 ---
 
@@ -39,10 +42,7 @@ Key Highlights:
 
 Video Demo:
 
-<video width="640" height="360" controls>
-    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/2OPjDXT1cYg?si=dViayZ2OzRQAjA46?mute=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -75,10 +75,7 @@ Key Highlights:
 
 Video Demo:
 
-<video width="640" height="360" controls>
-    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/nDevaS96jvQ?si=RfumaPJL7aQEvJn3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 ---
 
@@ -109,7 +106,4 @@ Key Highlights:
 
 Video Demo:
 
-<video width="640" height="360" controls>
-    <source src="https://youtu.be/c68lRunc81U" type="video/mp4">
-    Your browser does not support the video tag.
-</video>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/barJ2IQPSSY?si=F3hQkdPq3qFdiXYg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
